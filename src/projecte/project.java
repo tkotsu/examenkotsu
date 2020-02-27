@@ -30,6 +30,7 @@ public class project {
                 contrasenya = true;
             } else {
                 System.out.println("Les contrasenyes no coincideixen... Torna-hi...");
+                System.out.println("Intenta-ho amb un usuari que existeixi!");
             }
 
         }
