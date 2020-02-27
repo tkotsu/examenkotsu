@@ -30,7 +30,6 @@ public class project {
                 contrasenya = true;
             } else {
                 System.out.println("Les contrasenyes no coincideixen... Torna-hi...");
-                System.out.println("Intenta-ho amb un usuari que existeixi!");
             }
 
         }
@@ -88,12 +87,12 @@ public class project {
                         System.out.println("Anys: "+p.getYears());
                         if(p.getYears()>=18){
                             Lector noulector = new Lector(nomnouuser, nouuserpass, true);
-                            noulector.setRol("Lector");
+                            noulector.setRol(noulector.getClass().getSimpleName());
                             usuaris.add(noulector);
                         }
                         else{
                             Lector noulector = new Lector(nomnouuser, nouuserpass, false);
-                            noulector.setRol("Lector");
+                            noulector.setRol(noulector.getClass().getSimpleName());
                             usuaris.add(noulector);
                         }
                         break;

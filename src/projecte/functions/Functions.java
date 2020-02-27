@@ -43,7 +43,7 @@ public class Functions{
         System.out.println("************************************"); 
     }
     public static void mostrarposts(ArrayList<Post> posts){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm");
         for(Post p: posts){
             System.out.println("**********************************");
             System.out.println(" Autor: "+p.getAutor()+"  ");
