@@ -1,10 +1,12 @@
 package projecte.classes;
 
-public class Administrador extends Usuari{
+import java.util.ArrayList;
+
+public class Administrador extends Usuari {
 
 
-    public Administrador(String nom, String contrasenya) {
-        super(nom, contrasenya);
+    public Administrador(String nom, String contrasenya, ArrayList<Usuari> seguits) {
+        super(nom, contrasenya, seguits);
     }
     
     

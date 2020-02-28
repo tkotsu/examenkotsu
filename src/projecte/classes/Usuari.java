@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Usuari {
     protected String nom, contrasenya, rol;
-    protected ArrayList<String> seguits;
+    protected ArrayList<Usuari> seguits;
 
-    public Usuari(String nom, String contrasenya) {
+    public Usuari(String nom, String contrasenya, ArrayList<Usuari> seguits) {
         this.nom = nom;
         this.contrasenya = contrasenya;
-
+        this.seguits = seguits;
     }
 
     public String getNom() {
@@ -36,11 +36,11 @@ public class Usuari {
         this.rol = rol;
     }
 
-    public ArrayList<String> getSeguits() {
+    public ArrayList<Usuari> getSeguits() {
         return seguits;
     }
 
-    public void setSeguits(ArrayList<String> seguits) {
+    public void setSeguits(ArrayList<Usuari> seguits) {
         this.seguits = seguits;
     }
 
