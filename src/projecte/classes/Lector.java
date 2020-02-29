@@ -18,6 +18,9 @@ public class Lector extends Usuari {
         this.majordedat = majordedat;
     }
 
-    
+    @Override
+    public boolean comprovasiesmajor(){
+        return this.majordedat;
+    }
     
 }

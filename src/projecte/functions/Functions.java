@@ -160,13 +160,17 @@ public class Functions {
                     for (Post p : posts) {
                         if (p.getAutor().equals(j.getNom())) {
                             if (p.isPermajors()) {
-                                System.out.println("**********************************");
-                                System.out.println(" Autor: " + p.getAutor() + "  ");
-                                System.out.println(" Titol: " + p.getNompost());
-                                System.out.println("Data publicacio: " + p.getHorapublicacio().format(formatter));
-                                System.out.println("+18? " + p.isPermajors());
-                                System.out.println("Contingut: " + p.getContingut());
-                                System.out.println("**********************************");
+                                if (!u.comprovasiesmajor()) {
+                                    System.out.println("Aquest post nomes el pot veure majors d'edat!");
+                                } else {
+                                    System.out.println("**********************************");
+                                    System.out.println(" Autor: " + p.getAutor() + "  ");
+                                    System.out.println(" Titol: " + p.getNompost());
+                                    System.out.println("Data publicacio: " + p.getHorapublicacio().format(formatter));
+                                    System.out.println("+18? " + p.isPermajors());
+                                    System.out.println("Contingut: " + p.getContingut());
+                                    System.out.println("**********************************");
+                                }
                             } else {
                                 System.out.println("**********************************");
                                 System.out.println(" Autor: " + p.getAutor() + "  ");
@@ -214,4 +218,53 @@ public class Functions {
         System.out.println("* 0 - Log out                        *");
         System.out.println("**************************************");
     }
+
+    public static void mostrarperseguireditor(ArrayList<Usuari> usuaris, String nom) {
+        for (Usuari u : usuaris) {
+            if (u.getNom().equals(nom)) {
+
+            } else if (u.getRol().equals("Editor") || u.getRol().equals("Administrador")) {
+                System.out.println(u.getNom());
+            }
+
+        }
+    }
+
+    public static void mostrarpostsdelsseguitseditor(ArrayList<Post> posts, ArrayList<Usuari> usuaris, String nom) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm");
+        for (Usuari u : usuaris) {
+            if (u.getNom().equals(nom)) {
+                for (Usuari j : u.getSeguits()) {
+                    for (Post p : posts) {
+                        if (p.getAutor().equals(j.getNom())) {
+
+                            System.out.println("**********************************");
+                            System.out.println(" Autor: " + p.getAutor() + "  ");
+                            System.out.println(" Titol: " + p.getNompost());
+                            System.out.println("Data publicacio: " + p.getHorapublicacio().format(formatter));
+                            System.out.println("+18? " + p.isPermajors());
+                            System.out.println("Contingut: " + p.getContingut());
+                            System.out.println("**********************************");
+
+                        }
+                    }
+                }
+                for (Post p : posts) {
+                    if (p.getAutor().equals(u.getNom())) {
+
+                        System.out.println("**********************************");
+                        System.out.println(" Autor: " + p.getAutor() + "  ");
+                        System.out.println(" Titol: " + p.getNompost());
+                        System.out.println("Data publicacio: " + p.getHorapublicacio().format(formatter));
+                        System.out.println("+18? " + p.isPermajors());
+                        System.out.println("Contingut: " + p.getContingut());
+                        System.out.println("**********************************");
+
+                    }
+                }
+            }
+
+        }
+    }
+
 }

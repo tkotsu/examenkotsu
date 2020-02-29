@@ -9,7 +9,9 @@ public class Editor extends Usuari {
         
     }
 
-    
+    public boolean comprovasiesmajor(){
+        return true;
+    }
 
     
     

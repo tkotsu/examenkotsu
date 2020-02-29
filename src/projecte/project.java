@@ -229,7 +229,7 @@ public class project {
                             System.out.println("Qui vols seguir? (Intro per mostrar usuaris per seguir)");
                             String perseguir = System.console().readLine();
                             if (perseguir.isEmpty()) {
-                                Functions.mostrarperseguir(usuaris);
+                                Functions.mostrarperseguireditor(usuaris, nom);
                             }
                             else if(perseguir.equals(Functions.usuariperseguir(usuaris, perseguir))){
                                 Functions.afegirusuariaseguits(usuaris, perseguir, nom);
@@ -245,7 +245,7 @@ public class project {
                         Functions.mostrarseguits(usuaris, nom);
                         break;
                     case 4:
-                        Functions.mostrarpostsdelsseguits(posts, usuaris, nom);
+                        Functions.mostrarpostsdelsseguitseditor(posts, usuaris, nom);
 
                         break;
                     case 0:

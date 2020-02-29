@@ -9,5 +9,8 @@ public class Administrador extends Usuari {
         super(nom, contrasenya, seguits);
     }
     
+    public boolean comprovasiesmajor(){
+        return true;
+    }
     
 }

@@ -44,6 +44,8 @@ public class Usuari {
         this.seguits = seguits;
     }
 
-
+    public boolean comprovasiesmajor(){
+        return true;
+    }
     
 }
