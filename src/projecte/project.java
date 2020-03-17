@@ -13,7 +13,7 @@ public class project {
         ArrayList<Post> posts = new ArrayList<>();
 
         Functions.benvinguda();
-
+        System.out.println("Bon dia!");
         System.out.println("Introdueix el nom d'usuari que tindrà el rol d'administrador: ");
         String nomadmin = System.console().readLine();
         boolean contrasenya = false;
